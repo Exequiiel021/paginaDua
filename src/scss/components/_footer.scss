@@ -1,0 +1,37 @@
+@use '../global/mixins' as m;
+@use '../global/variables' as v;
+
+.footer{
+    background-color: v.$rosa;
+    width: 100%;
+    max-width: 100%;
+
+    .footer-contenedor{
+        display: flex;
+        width: 100%; 
+        justify-content: space-around;
+        align-items: center;
+
+        p{
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+
+    img{
+        min-width: 35px;
+        width: 35px;
+    }
+
+    .enlace{
+        padding: 1rem;
+        @include m.grid(2,1rem);
+
+        @include m.tablet {
+            display: flex;
+        }
+        
+
+
+    }
+}

@@ -1,0 +1,49 @@
+@use '../global/variables' as v;
+@use '../global/mixins' as m;
+
+.header{
+    background: rgb(207,59,114);
+background: linear-gradient(90deg, rgba(207,59,114,1) 0%, rgba(227,144,76,0.6530987394957983) 49%, rgba(207,59,114,1) 100%);
+
+    h1{
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+}
+
+.navegacion-principal{
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+
+        @include m.tablet {
+            margin:0;
+        }
+
+        &:hover{
+            color: v.$amarillo;
+        }
+    }
+}
+
+.contenido-header{
+    padding: 2rem;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+}

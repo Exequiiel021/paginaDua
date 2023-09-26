@@ -1,0 +1,53 @@
+@use '../global/mixins' as m;
+@use '../global/variables' as v;
+
+.video {
+
+    max-height: 80rem;
+    min-height: 70rem;
+    position: relative;
+    overflow: hidden;
+
+    .overlay {
+        position: absolute; //se mueve de acuerdo a la posicion padre, que seria ".video"
+        background: rgb(131, 58, 180);
+        background: linear-gradient(90deg, rgba(131, 58, 180, 0.30015756302521013) 0%, rgba(253, 29, 203, 0.21052170868347342) 0%, rgba(208, 55, 235, 0.3029586834733894) 100%, rgba(185, 69, 252, 0.29735644257703087) 100%);
+        height: 100%; //fondo tome todo el espacio del video
+        width: 100%; //fondo tome todo el espacio del video
+
+        display: flex;
+        flex-direction: column; //para poder aplicar justify content center de manera vertical
+        justify-content: center; //ya listo para centrar verticalmente
+    }
+
+    video {
+        width: 100%;
+        display: block; //para solucionar la pequeña parte que sobresalia abajo del gradient
+
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.contenido-video {
+    z-index: 1; //para podes superponer primero el texto del titulo al video.
+
+
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p {
+        background-color: v.$rosa;
+        color: v.$blanco;
+        display: inline-block; //para que solo tome el espacion que necesita el fondo y no todo el ancho.
+        padding: 1rem 2rem;
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 0; //para que el parrafo no tenga margen, los parrafos tiene muchos margen
+    }
+}

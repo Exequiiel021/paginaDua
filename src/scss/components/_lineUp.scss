@@ -1,0 +1,95 @@
+@use '../global/variables' as v;
+@use '../global/mixins' as m;
+
+
+.lineup {
+    background: rgb(207, 59, 114);
+    background: linear-gradient(90deg, rgba(207, 59, 114, 1) 0%, rgba(227, 144, 76, 0.6530987394957983) 49%, rgba(207, 59, 114, 1) 100%);
+    padding: 5rem 0;
+
+    h3,
+    p {
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        bottom: 5rem 0;
+    }
+
+
+}
+
+.escenario-contenedor {
+
+    @include m.tablet {
+        @include m.grid(2, 3rem);
+    }
+
+    p {
+        color: v.$negro;
+    }
+}
+
+.escenario {
+    padding: 2rem;
+}
+
+.pop .nombre-escenario:after {
+    background-image: url(../../img/icono_edm.png);
+}
+
+.bg-amarillo {
+    background: rgb(253, 216, 45);
+    background: radial-gradient(circle, rgba(253, 216, 45, 0.40379901960784315) 0%, rgba(253, 216, 45, 1) 100%);
+
+    li:nth-child(odd) {
+        background-color: darken(v.$amarillo, 30%);
+    }
+}
+
+.bg-verde {
+    background: rgb(76, 184, 179);
+    background: radial-gradient(circle, rgba(76, 184, 179, 0.6558998599439776) 0%, rgba(76, 184, 179, 0.9808298319327731) 100%);
+
+    li:nth-child(odd) {
+        background-color: darken(v.$verde, 10%);
+    }
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    .icon-pop {
+        width: 80px;
+        max-width: 100%;
+        height: 80px;
+       
+    }
+
+    .icon-edm {
+        width: 80px;
+        margin-bottom: 1.62rem;
+       
+        max-width: 100%;
+        height: 70px;
+    }
+}
+
+
+
+.calendario {
+    @include m.resetearLista;
+    font-weight: 700;
+
+    li {
+        padding: 25px;
+
+        span {
+            font-weight: 400;
+        }
+    }
+}
